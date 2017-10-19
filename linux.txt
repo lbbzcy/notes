@@ -1,0 +1,25 @@
+1.基础命令的操作
+  显示日期和时间的命令： date      date +Y%/%m/%d  2017/10/17
+  显示日历的命令: cal   cal [[month]year]
+  简单好用的计算器: bc  + - * / ^指数 % 余数 bc 默认输出整数  如果想要想要输出小数，必须执行scale=number ,其中Number就是小数点后的位数 
+  
+2.tab键 命令补全和文件补齐
+  Ctrl + c  终端目前程序
+  Ctrl + d 键盘输入结束
+3.正确关机方法
+  who : 查看目前谁在线
+  netstat -a : 查看网络的联机状态
+  ps -aux : 查看后台执行程序
+  sync : 数据同步写入磁盘
+  shutdown : 关机
+  reboot halt poweroff : 重启 关机
+  init : 切换执行等级
+       run level 0 : 关机
+       run level 3 : 纯命令模式
+       run level 5 : 含有图形界面模式
+       run level 6 : 重启
+  所以 init 0 也可以实现关机 
+4.忘记root密码
+  系统重启后，在读秒时按下任意键，按下e就能进入grub的编辑模式，将光标移动到kernel哪一行，再按e进入kernel的编辑页面，然后输入single,按下enter确认之后，再按下b就可以进入单用户维护模式了。  使用passwd修改密码。
+
+  
