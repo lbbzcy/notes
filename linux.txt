@@ -21,5 +21,61 @@
   所以 init 0 也可以实现关机 
 4.忘记root密码
   系统重启后，在读秒时按下任意键，按下e就能进入grub的编辑模式，将光标移动到kernel哪一行，再按e进入kernel的编辑页面，然后输入single,按下enter确认之后，再按下b就可以进入单用户维护模式了。  使用passwd修改密码。
-
+5.chgrp : 改变文件所属用户组
+  chown : 改变文件所有者
+  chmod : 改变文件的权限
+        chmod 777 filename 
+        chmod    u       +(加入)     r     
+                 g       -(除去)     w      文件或目录
+                 o       =(设置)     x  
+                 a
+        chmod u=rwx,go=rw .bashrc
+        chmod a+x .bashrc
   
+6. linux  文件种类
+   文件种类： 普通文件
+              纯文本文件(ASCII)
+              二进制文件(binary)
+              数据格式文件(data)
+  目录  第一个属性为d
+  连接文件： l
+  设备与设备文件：
+                块设备文件:存储数据，提供随机访问的接口设备，例如硬盘，软盘等 b
+                字符设备文件：串行端口的接口设备，例如键盘鼠标等。 c
+ 套接字：sockets s
+ 管道： p
+7.linux 目录配置标准:FHS
+  FHS 针对目录架构仅定义出三层目录下面应该防止什么数据而已，分别是
+     / （root，根目录） 与开机系统有关
+     /usr (UNIX software resource) 与软件安装/执行有关
+     /var (variable) 与系统运作过程有关
+   有五个目录不可与根目录放在不同的分区，分别是/etc,/bin,/lib,/dev,/sbin
+8.  .  代表当前目录
+    .. 代表上一级目录
+    -  代表前一个工作目录
+    ~  代表“目前用户身份”所在的主文件夹
+    ~account  代表account这个用户的主文件夹
+    cd  切换目录
+    pwd  显示当前目录
+    mkdir  新建一个目录
+   rmdir  删除一个空目录
+    ls 查看文件与目录
+    cp  复制
+    rm  删除
+    mv  移动
+    basename  获取文件名
+    dirname   获取目录名
+    cat  从第一行开始显示文件内容
+    tac  从最后一行开始显示
+    nl   显示的时候，顺便输出行号
+    more 一页一页地显示文件内容
+    less 与more相似，比more好的是，可以向前翻页
+    head 只看头几行
+    tail 只看结尾几行
+    od   以二进制的方式读取文件内容 
+    touch  修改文件时间或创建新文件
+    umask  文件默认权限 
+    chattr lsattr 文件隐藏属性
+    file  查看文件类型
+脚本文件名的查询  which
+文件名的查找　　　whereis  locate find 
