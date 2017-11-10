@@ -1,0 +1,1 @@
+ CentOS 7 64bit Minimal安装后的初步10项优化和配置（更新epel和remi源安装）https://itgeeker.net/centos-7-minimal-optimization-10-ways-after-new-installation-by-itgeeker/
